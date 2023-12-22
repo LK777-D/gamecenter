@@ -58,7 +58,7 @@ const Slider = () => {
     return () => clearInterval(intervalId);
   }, [index]);
   return (
-    <div className="max-w-[1800px] h-[50vh] w-[100vw] md:h-[75vh] lg:h-[80vh] lg:w-[100vw] xl:h-[100vh] xl:w-[100vw] relative   ">
+    <div className="max-w-[1900px] h-[50vh] w-[100vw] md:h-[75vh] lg:h-[80vh] lg:w-[100vw] xl:h-[100vh] xl:w-[100vw] relative mx-auto   ">
       <div
         className={`w-full h-full bg-center ${images[index].url} bg-cover duration-500 flex items-end pl-2  `}
       >
