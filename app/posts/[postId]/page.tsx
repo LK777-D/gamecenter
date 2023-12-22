@@ -8,7 +8,7 @@ const SinglePost = ({ params }: any) => {
   console.log(postId, "hello");
   return (
     <main className="controllerbg">
-      <div className=" md:hidden text-white">
+      <div className=" py-4 md:hidden text-white">
         {selectedPosts.map((post) => (
           <div key={post.id}>
             <div>

@@ -80,9 +80,8 @@ const FirebaseCtxProvider = ({ children }: { children: ReactNode }) => {
     } catch (err) {
       ("error logging in");
     }
-    if (user) {
-      router.push("/");
-    }
+
+    router.push("/");
   };
   const logout = async () => {
     await signOut(auth);

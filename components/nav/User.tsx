@@ -37,8 +37,13 @@ const User = () => {
             userMenuIsopen ? "show" : ""
           }  p-2 rounded-md flex gap-1 flex-col items-center transition duration-150 ease-out   top-[128%] bg-purple-900 z-50 `}
         >
-          <span>Account Details:</span>
-          <span className="text-sm">{user && user?.email}</span>
+          <h2 className="flex gap-1">
+            <span>Account</span>
+            <span>Details:</span>
+          </h2>
+          <span className="text-sm mb-1">
+            {user ? user?.email : "login to see user"}
+          </span>
           {userMenuIsopen && (
             <>
               <Link
@@ -61,19 +66,26 @@ const User = () => {
               </Link>
             </>
           )}
-          <button
-            onClick={logout}
-            className="rounded-md transition hover:bg-gray-400 duration-150 ease-linear w-full text-center"
-          >
-            Logout
-          </button>
+          {user ? (
+            <button
+              onClick={logout}
+              className="rounded-md transition hover:bg-gray-400 duration-150 ease-linear w-full text-center"
+            >
+              Logout
+            </button>
+          ) : (
+            <Link
+              className="rounded-md transition hover:bg-gray-400 duration-150 ease-linear w-full text-center"
+              href={"/auth"}
+            >
+              Login
+            </Link>
+          )}
         </div>
       }
-      {
+      {navIsopen && (
         <div
-          className={`md:hidden ${
-            navIsopen ? "slidein" : "slideout"
-          } transition duration-150  absolute z-50 flex flex-col items-center justify-around top-[-23%] right-[-15%] w-[80vw]  h-[100vh]  bg-purple-800`}
+          className={`md:hidden appear transition duration-150  absolute z-50 flex flex-col items-center justify-center gap-10 top-[-23%] right-[-15%] w-[80vw]  h-[100vh]  bg-purple-800`}
         >
           <div className="flex flex-col gap-3 w-full items-center">
             <h1 className="text-3xl">GameCenter</h1>
@@ -82,7 +94,8 @@ const User = () => {
 
           <div className="flex flex-col text-2xl gap-10 w-full px-4">
             <div className="flex flex-col">
-              <h1 className="text-center mb-5">Navigation</h1>
+              <h1 className="text-center mb-1">Navigation</h1>
+              <div className="mb-4 h-[1px] bg-gray-300 w-[70%] mx-auto "></div>
               <Link
                 href={"/"}
                 className="rounded-md transition hover:bg-gray-400 duration-150 ease-linear w-full text-center"
@@ -110,7 +123,8 @@ const User = () => {
             </div>
 
             <div className="flex flex-col">
-              <h1 className="text-center mb-5">Mini-Games</h1>
+              <h1 className="text-center mb-2">Mini-Games</h1>
+              <div className="mb-4 h-[1px] bg-gray-300 w-[70%] mx-auto "></div>
               <Link
                 href={"/memo"}
                 className="rounded-md transition hover:bg-gray-400 duration-150 ease-linear w-full text-center"
@@ -125,9 +139,11 @@ const User = () => {
               </Link>
             </div>
           </div>
-          <span>user : {user && user?.email}</span>
+          <span className="mb-20">
+            user : {user ? user?.email : "login to see user e-mail"}
+          </span>
         </div>
-      }
+      )}
       {navIsopen && <Modal setNavIsOpen={setNavIsOpen} />}
       <div className="hidden md:flex gap-2">
         <span>{user && user.email}</span>

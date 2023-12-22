@@ -103,7 +103,7 @@ body {
   text-shadow: 8px 10px 5px black;
 }
 .consolesbg {
-  background-image: url("../assets/consoles.webp");
+  background-image: url("../assets/bg777.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -162,4 +162,16 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.appear {
+  animation: navbarap 0.5s ease-in-out;
+}
+
+@keyframes navbarap {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
 }
