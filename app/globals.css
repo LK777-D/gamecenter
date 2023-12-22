@@ -120,6 +120,12 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.newItemBg {
+  background-image: url("../assets/authbg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .scoreAnim {
   animation: bump 1s linear;
   transition: all 0.25s ease;

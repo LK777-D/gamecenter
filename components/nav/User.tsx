@@ -132,7 +132,7 @@ const User = () => {
                 Memo Game
               </Link>
               <Link
-                href={"/memo"}
+                href={"/guessVideoGame"}
                 className="rounded-md text-[1.1rem] transition hover:bg-gray-400 duration-150 ease-linear w-full text-center"
               >
                 Guess The Video Game
@@ -146,11 +146,16 @@ const User = () => {
       )}
       {navIsopen && <Modal setNavIsOpen={setNavIsOpen} />}
       <div className="hidden md:flex gap-2">
-        <span>{user && user.email}</span>
+        <span className="hidden lg:inline">{user && user.email}</span>
         {user && (
-          <Link href={"/posts/myposts"} className="hover:underline">
-            My Posts
-          </Link>
+          <div className="flex gap-1">
+            <Link href={"/posts/myposts"} className="hover:underline">
+              My Posts
+            </Link>
+            <Link href={"/posts/new"} className="hover:underline">
+              Add Item
+            </Link>
+          </div>
         )}
         {user ? (
           <button className="hover:underline" onClick={logout}>

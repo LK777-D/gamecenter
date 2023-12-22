@@ -34,15 +34,15 @@ const Nav = () => {
         </Link>
       </div>
       <div
-        className="hidden md:block relative cursor-pointer"
+        className="hidden  md:block relative cursor-pointer"
         onMouseEnter={() => setMiniNavOpen(true)}
       >
         <span>Mini Games</span>
         {miniNavOpen && (
           <div
-            className={` absolute mininav ${
+            className={`rounded-md absolute mininav ${
               miniNavOpen ? "show" : ""
-            } left-5 text-center top-[220%] w-[12rem] z-[1000] bg-purple-950 flex flex-col p-2 `}
+            } left-5 text-center top-[220%] w-[12rem] z-[1000] bg-purple-950/70 flex flex-col p-2 `}
           >
             <Link
               className="rounded-md transition hover:bg-gray-400 duration-150 ease-linear"

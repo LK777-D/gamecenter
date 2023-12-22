@@ -13,7 +13,7 @@ const PostForm = () => {
 
   return (
     <>
-      <section className="bg-gray-500/50  rounded-lg w-[95%] md:w-[70%] lg:w-[60%] xl:w-[50%] shadow-lg p-4 mx-auto">
+      <section className="bg-gray-500/70  rounded-lg w-[95%] md:w-[70%] lg:w-[60%] xl:w-[50%] shadow-lg p-4 mx-auto">
         <h2 className="text-2xl text-center text-gray-200 fontbold  mb-4">
           Add New Item For Sale
         </h2>

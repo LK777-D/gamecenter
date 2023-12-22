@@ -52,7 +52,7 @@ export default function RootLayout({
         <GuessGameCtxProvider>
           <body className={inter.className}>
             <Nav />
-            <Slider />
+
             {children}
             <Footer />
           </body>
