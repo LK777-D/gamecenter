@@ -10,7 +10,8 @@ const Nav = () => {
       className="fontskr h-[5rem] bg-purple-950 text-white flex items-center justify-between px-4 lg:px-10"
     >
       <Link href={"/"} className="fontskr text-xl">
-        GameCenter
+        <span className="text-green-400 text-3xl">G</span>ame
+        <span className="text-red-400 text-3xl">C</span>enter
       </Link>
       <div className="hidden md:flex fontskr  gap-3 ">
         <Link
@@ -41,7 +42,7 @@ const Nav = () => {
           <div
             className={` absolute mininav ${
               miniNavOpen ? "show" : ""
-            } translate-x-[-25%] text-center top-[220%] w-[12rem] z-[1000] bg-purple-950 flex flex-col p-2 `}
+            } left-5 text-center top-[220%] w-[12rem] z-[1000] bg-purple-950 flex flex-col p-2 `}
           >
             <Link
               className="rounded-md transition hover:bg-gray-400 duration-150 ease-linear"

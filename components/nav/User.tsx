@@ -88,7 +88,7 @@ const User = () => {
           className={`md:hidden appear transition duration-150  absolute z-50 flex flex-col items-center justify-center gap-10 top-[-23%] right-[-15%] w-[80vw]  h-[100vh]  bg-purple-800`}
         >
           <div className="flex flex-col gap-3 w-full items-center">
-            <h1 className="text-3xl">GameCenter</h1>
+            <h1 className="text-2xl">GameCenter</h1>
             <div className="h-[1px] bg-gray-300 w-[90%] "></div>
           </div>
 
@@ -98,25 +98,25 @@ const User = () => {
               <div className="mb-4 h-[1px] bg-gray-300 w-[70%] mx-auto "></div>
               <Link
                 href={"/"}
-                className="rounded-md transition hover:bg-gray-400 duration-150 ease-linear w-full text-center"
+                className="rounded-md text-[1.1rem] transition hover:bg-gray-400 duration-150 ease-linear w-full text-center"
               >
                 Home
               </Link>
               <Link
                 href={"/xbox"}
-                className="rounded-md transition hover:bg-gray-400 duration-150 ease-linear w-full text-center"
+                className="rounded-md text-[1.1rem] transition hover:bg-gray-400 duration-150 ease-linear w-full text-center"
               >
                 Xbox
               </Link>
               <Link
                 href={"/playstation"}
-                className="rounded-md transition hover:bg-gray-400 duration-150 ease-linear w-full text-center"
+                className="rounded-md text-[1.1rem] transition hover:bg-gray-400 duration-150 ease-linear w-full text-center"
               >
                 PlayStation
               </Link>
               <Link
                 href={"/nintendo"}
-                className="rounded-md transition hover:bg-gray-400 duration-150 ease-linear w-full text-center"
+                className="rounded-md text-[1.1rem] transition hover:bg-gray-400 duration-150 ease-linear w-full text-center"
               >
                 Nintendo
               </Link>
@@ -127,13 +127,13 @@ const User = () => {
               <div className="mb-4 h-[1px] bg-gray-300 w-[70%] mx-auto "></div>
               <Link
                 href={"/memo"}
-                className="rounded-md transition hover:bg-gray-400 duration-150 ease-linear w-full text-center"
+                className="rounded-md text-[1.1rem] transition hover:bg-gray-400 duration-150 ease-linear w-full text-center"
               >
                 Memo Game
               </Link>
               <Link
                 href={"/memo"}
-                className="rounded-md transition hover:bg-gray-400 duration-150 ease-linear w-full text-center"
+                className="rounded-md text-[1.1rem] transition hover:bg-gray-400 duration-150 ease-linear w-full text-center"
               >
                 Guess The Video Game
               </Link>
@@ -147,11 +147,19 @@ const User = () => {
       {navIsopen && <Modal setNavIsOpen={setNavIsOpen} />}
       <div className="hidden md:flex gap-2">
         <span>{user && user.email}</span>
-        {user && <Link href={"/myposts"}>My Posts</Link>}
+        {user && (
+          <Link href={"/posts/myposts"} className="hover:underline">
+            My Posts
+          </Link>
+        )}
         {user ? (
-          <button onClick={logout}>Logout</button>
+          <button className="hover:underline" onClick={logout}>
+            Logout
+          </button>
         ) : (
-          <Link href={"/auth"}>LogIn</Link>
+          <Link className="hover:underline" href={"/auth"}>
+            LogIn
+          </Link>
         )}
       </div>
     </div>

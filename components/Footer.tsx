@@ -70,7 +70,7 @@ const Footer = () => {
 
       <div className="border-t border-gray-700 mt-8 pt-8 text-center">
         <p className="text-gray-400">
-          &copy; 2023 Console Marketplace. All rights reserved.
+          &copy; 2024 GameCenter Marketplace. All rights reserved.
         </p>
       </div>
     </footer>
