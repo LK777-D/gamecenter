@@ -5,9 +5,10 @@ import Loader from "../Loader";
 type PostListProps = {
   filterArr: string;
   bg: string;
+  button: boolean;
 };
-const PostList = ({ filterArr, bg }: PostListProps) => {
-  const { posts } = useFirebaseCtx();
+const PostList = ({ filterArr, bg, button }: PostListProps) => {
+  const { posts, deletePost, user } = useFirebaseCtx();
   const xbox = posts.filter((post) =>
     post.category.toLowerCase().includes("xbox")
   );
@@ -17,6 +18,7 @@ const PostList = ({ filterArr, bg }: PostListProps) => {
   const nintendo = posts.filter((post) =>
     post.category.toLowerCase().includes("nintendo")
   );
+  const myPosts = posts.filter((post) => user?.email === post.user);
 
   let postsArray = [];
 
@@ -26,6 +28,8 @@ const PostList = ({ filterArr, bg }: PostListProps) => {
     postsArray = xbox;
   } else if ((filterArr = "playstation")) {
     postsArray = ps;
+  } else if ((filterArr = "myPosts")) {
+    postsArray = myPosts;
   } else {
     postsArray = nintendo;
   }
@@ -47,6 +51,8 @@ const PostList = ({ filterArr, bg }: PostListProps) => {
               user={post.user}
               id={post.id}
               description={post.description}
+              deletePost={() => deletePost(post.id)}
+              button={button}
             />
           ))
         ) : (

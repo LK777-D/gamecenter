@@ -3,7 +3,7 @@ import PostList from "@/components/Post/PostList";
 const Nintendo = () => {
   return (
     <main>
-      <PostList filterArr={"nintendo"} bg="controllerbg" />
+      <PostList filterArr={"nintendo"} bg="controllerbg" button={false} />
     </main>
   );
 };

@@ -7,7 +7,7 @@ const Nav = () => {
   return (
     <nav
       onMouseLeave={() => setMiniNavOpen(false)}
-      className="fontskr h-[5rem] bg-purple-950 text-white flex items-center justify-between px-4 lg:px-10"
+      className="fontskr h-[10vh] md:h-[5rem] bg-purple-950 text-white flex items-center justify-between px-4 lg:px-10"
     >
       <Link href={"/"} className="fontskr text-xl">
         <span className="text-green-400 text-3xl">G</span>ame

@@ -25,10 +25,10 @@ const User = () => {
     <div className="relative">
       <div className="flex gap-2 md:hidden">
         <button onClick={() => setUserMenuIsOpen((prev) => !prev)}>
-          <Image alt="img" src={userImg} width={50} height={60} />
+          <Image alt="img" src={userImg} width={40} height={40} />
         </button>
         <button onClick={openNavHandler}>
-          <Image alt="img" src={lines} width={50} height={60} />
+          <Image alt="img" src={lines} width={40} height={40} />
         </button>
       </div>
       {

@@ -14,7 +14,8 @@ export type Post = {
     imgLink: string,
     user:string,
     price:number,
-    id?: string
+    id: string
+    button:boolean
     
   };
 
@@ -59,4 +60,5 @@ export type GuessGame = {
     correctAnswer:boolean
     restartHandler: () => void
     restart:boolean
+    
 }

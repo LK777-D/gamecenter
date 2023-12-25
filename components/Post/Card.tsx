@@ -8,6 +8,8 @@ type CardProps = {
   price: number;
   title: string;
   user: string;
+  deletePost: (postId: string) => Promise<void>;
+  button: boolean;
 };
 const Card = ({
   category,
@@ -17,10 +19,15 @@ const Card = ({
   price,
   title,
   user,
+  deletePost,
+  button,
 }: CardProps) => {
   return (
     <div className="min-w-[94%] max-w-[95%] bg-gray-400/50 p-2 rounded-md mx-auto flex flex-col gap-2 justify-between text-gray-200">
-      <Link href={`/posts/${id}`} className="w-full h-full">
+      <Link
+        href={`/posts/${id}`}
+        className="w-full h-full flex flex-col justify-end"
+      >
         <Image
           src={imgLink}
           alt="img"
@@ -44,6 +51,8 @@ const Card = ({
           </span>
         </div>
       </Link>
+      {button && <div className="h-[2px] w-[90%] bg-white/70 mx-auto "></div>}
+      {button && <button onClick={() => deletePost(id!)}>Delete Item</button>}
     </div>
   );
 };
